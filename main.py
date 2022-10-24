@@ -39,7 +39,6 @@ pickachu = 0
 table_tr = table1.find_all('tr',class_='')
 for pika in table_tr:
       pickachu += 1
-print(pickachu)
 
 with open(f'index.html','w',encoding='utf-8') as file:
     scr = file.write(response.text)
@@ -253,6 +252,6 @@ with open(f'index.html',encoding='utf-8') as file:
             continue
     df = pd.DataFrame(corr_Arr, columns=['очки', 'голы'])
     print(df.corr())
-
-
+# Измененния с ноутбука
+print('bla bla bla ')
 
