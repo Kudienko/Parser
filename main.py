@@ -195,9 +195,11 @@ with open(f'index.html',encoding='utf-8') as file:
     dataframe = pd.DataFrame(columns=['Игрок','Матчи'])
     player = []
     mathes = []
-    for fio in walkers:
-        player.append(fio[1])
-        mathes.append(fio[6])
+    for el in arr:
+        for key, value in counter_dict.items():
+            if el[0] == key and int(el[6]) < value:
+                player.append(el[1])
+                mathes.append(el[6])
     dataframe['Игрок'] = player
     dataframe['Матчи'] = mathes
     print(tableize(dataframe))
@@ -252,6 +254,4 @@ with open(f'index.html',encoding='utf-8') as file:
             continue
     df = pd.DataFrame(corr_Arr, columns=['очки', 'голы'])
     print(df.corr())
-# Измененния с ноутбука
-print('bla bla bla ')
 
